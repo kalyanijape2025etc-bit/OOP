@@ -1,0 +1,65 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+class complex
+{
+private:
+int real,img;
+public:
+void read();
+void display();
+complex multiply(complex);
+void add(complex,complex);
+void subtract(complex,complex);
+};
+void complex::read()
+
+{
+cout<<"Enter real and imaginary numbers:";
+cin>>real>>img;
+}
+void complex::display()
+{
+if(img>0)
+{
+cout<<real<<"+i"<<img;
+}
+else
+{
+cout<<real<<"-i"<<img;
+}
+}
+void complex::add(complex C1,complex C2)
+{
+real=C1.real+C2.real;
+img=C1.img+C2.img;
+}
+void complex::subtract(complex C1,complex C2)
+{
+real=C1.real-C2.real;
+img=C1.img-C2.img;
+
+}
+complex complex::multiply(complex C1)
+{
+complex product;
+product.real=(real*C1.real)-(img*C1.img);
+product.img=(real*C1.img)+(img*C1.real);
+return product;
+}
+int main()
+{
+complex C1,C2,C3,C4,C5;
+C1.read();
+C2.read();
+C3.add(C1,C2);
+cout<<"Sum is:";
+C3.display();
+C4.subtract(C1,C2);
+cout<<"\nSubtraction is:";
+C4.display();
+C5 = C1.multiply(C2);
+cout<<"\nProduct is:";
+C5.display();
+return 0;
+}

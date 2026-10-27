@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+void readarr(int arr[],int n)
+{
+cout<<"Enter "<<n<<" elements:";
+for(int i=0;i<n;i++)
+{
+cin>>arr[i];
+}
+}
+void swaparr(int &a,int &b)
+{
+int temp=a;
+a=b;
+b=temp;
+}
+
+void sortarr(int arr[],int n)
+{
+for(int i=0;i<n-1;i++)
+{
+for(int j=0;j<n-i-1;j++)
+{
+if(arr[j]>arr[j+1])
+{
+swaparr(arr[j],arr[j+1]);
+}
+}
+
+}
+}
+void displayarr(int arr[],int n)
+{
+cout<<"Sorted array is:";
+for(int i=0;i<n;i++)
+{
+cout<<arr[i]<<" ";
+}
+}
+int main()
+
+{
+int n;
+int arr[n];
+cout<<"Enter size of array:";
+cin>>n;
+readarr(arr,n);
+sortarr(arr,n);
+displayarr(arr,n);
+return 0;
+}

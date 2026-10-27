@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+class Numbersum
+{
+private:
+int i,start,end,evensum=0,oddsum=0;
+public:
+void range();
+void sum();
+int geteven_sum();
+int getodd_sum();
+};
+void Numbersum::range()
+{
+cout<<"Enter starting and end range:";
+cin>>start>>end;
+
+}
+void Numbersum::sum()
+{
+for(i=start;i<=end;i++)
+{
+if(i%2==0)
+evensum+=i;
+else
+oddsum+=i;
+}
+
+}
+int Numbersum::geteven_sum()
+{
+return evensum;
+}
+int Numbersum::getodd_sum()
+{
+return oddsum;
+}
+void display(Numbersum N)
+{
+cout<<"Even sum is:"<<N.geteven_sum();
+cout<<"\nOdd sum is:"<<N.getodd_sum();
+
+}
+int main()
+{
+Numbersum N;
+N.range();
+N.sum();
+display(N);
+return 0;
+}
